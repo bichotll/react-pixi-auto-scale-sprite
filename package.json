@@ -6,13 +6,20 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "docz dev",
-    "build": "microbundle",
+    "build": "rm -Rf dist && babel src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "bichotll",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
     "@inlet/react-pixi": "^0.1.7",
+    "babel-cli": "^6.26.0",
     "docz": "^0.11.2",
     "pixi.js": "^4.7.1"
   }
