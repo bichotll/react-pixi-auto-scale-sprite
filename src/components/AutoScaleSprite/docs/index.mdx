@@ -1,0 +1,38 @@
+---
+name: index
+menu: AutoScaleSprite
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Stage, Sprite } from '@inlet/react-pixi'
+import * as PIXI from 'pixi.js'
+import AutoScaleSprite from './../'
+import docs from './'
+
+# AutoScaleSprite
+
+<Playground>
+  <Stage width={500} height={500}>
+    <AutoScaleSprite
+      width={50}
+      texture={docs.textures[0]}
+    />
+    <AutoScaleSprite
+      width={100}
+      texture={docs.textures[0]}
+    />
+    <AutoScaleSprite
+      width={200}
+      texture={docs.textures[0]}
+    />
+    <AutoScaleSprite
+      width={400}
+      texture={docs.textures[0]}
+    />
+    <Sprite
+      x={450}
+      y={450}
+      texture={docs.textures[0]}
+    />
+  </Stage>
+</Playground>

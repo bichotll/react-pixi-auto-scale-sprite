@@ -1,0 +1,19 @@
+{
+  "name": "react-pixi-auto-scale-sprite",
+  "version": "1.0.0",
+  "description": "<AutoScaleSprite /> Dynamic sprite component for react-pixi",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "docz dev",
+    "build": "microbundle",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bichotll",
+  "license": "ISC",
+  "devDependencies": {
+    "@inlet/react-pixi": "^0.1.7",
+    "docz": "^0.11.2",
+    "pixi.js": "^4.7.1"
+  }
+}

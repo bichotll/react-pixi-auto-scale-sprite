@@ -1,0 +1,75 @@
+---
+name: max-dimensions example
+menu: AutoScaleSprite
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Stage, Sprite } from '@inlet/react-pixi'
+import * as PIXI from 'pixi.js'
+import AutoScaleSprite from './../'
+import docs from './'
+
+# AutoScaleSprite - max-width / max-height
+
+
+## height, maxWidth
+
+<Playground>
+  <Stage width={200} height={200}>
+    <AutoScaleSprite
+      height={400}
+      maxWidth={100}
+      texture={docs.textures[0]}
+    />
+    <Sprite
+      x={150}
+      y={150}
+      texture={docs.textures[0]}
+    />
+  </Stage>
+</Playground>
+
+
+## width, maxHeight
+
+<Playground>
+  <Stage width={200} height={200}>
+    <AutoScaleSprite
+      width={400}
+      maxHeight={100}
+      texture={docs.textures[0]}
+    />
+    <Sprite
+      x={150}
+      y={150}
+      texture={docs.textures[0]}
+    />
+  </Stage>
+</Playground>
+
+
+## height, width, maxWidth, maxHeight
+
+<Playground>
+  <Stage width={200} height={200}>
+    <AutoScaleSprite
+      height={50}
+      width={200}
+      maxWidth={25}
+      maxHeight={25}
+      texture={docs.textures[0]}
+    />
+    <AutoScaleSprite
+      height={50}
+      width={200}
+      maxWidth={250}
+      maxHeight={250}
+      texture={docs.textures[0]}
+    />
+    <Sprite
+      x={150}
+      y={150}
+      texture={docs.textures[0]}
+    />
+  </Stage>
+</Playground>
