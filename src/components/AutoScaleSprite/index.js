@@ -14,18 +14,24 @@ class AutoScaleSprite extends React.PureComponent {
     this.checkTexture();
   }
 
+  componentDidUpdate(prevProps) {
+    if (!prevProps.visible && this.props.visible) {
+      this.props.onTextureScal();
+    }
+  }
+
   checkTexture() {
     const { texture } = this.props;
 
     if (texture.baseTexture.hasLoaded) {
-      this.setImageScale();
+      this.setTextureScale();
     } else {
-      texture.baseTexture.on('load', () => { this.setImageScale() });
-      texture.baseTexture.on('update', () => { this.setImageScale() });
+      texture.baseTexture.on('load', () => { this.setTextureScale() });
+      texture.baseTexture.on('update', () => { this.setTextureScale() });
     }
   }
 
-  setImageScale() {
+  setTextureScale() {
     const { texture, height, width, maxHeight, maxWidth } = this.props;
 
     let newState;
