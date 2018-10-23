@@ -14,9 +14,11 @@ class AutoScaleSprite extends React.PureComponent {
     this.checkTexture();
   }
 
-  componentDidUpdate(prevProps) {
-    if (!prevProps.visible && this.props.visible) {
-      this.props.onTextureScal();
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.visible && this.state.visible) {
+      if (typeof this.props.onTextureScale === 'function') {
+        this.props.onTextureScale();
+      }
     }
   }
 
