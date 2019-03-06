@@ -5,7 +5,10 @@
   "source": "src/index.js",
   "main": "dist/index.js",
   "scripts": {
-    "start": "docz dev",
+    "start": "npm run dirty:babel-workaround:before && docz dev && npm run dirty:babel-workaround:after",
+    "docz:build": "npm run dirty:babel-workaround:before && docz build && npm run dirty:babel-workaround:after",
+    "dirty:babel-workaround:before": "mv .babelrc __.babelrc",
+    "dirty:babel-workaround:after": "mv __.babelrc .babelrc",
     "build": "rm -Rf dist && babel src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,9 +21,14 @@
     "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
     "@babel/plugin-transform-modules-commonjs": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
-    "@inlet/react-pixi": "^0.1.7",
+    "@inlet/react-pixi": "^0.5.4",
     "babel-cli": "^6.26.0",
-    "docz": "^0.11.2",
-    "pixi.js": "^4.7.1"
+    "docz": "^0.13.7",
+    "docz-theme-default": "^0.13.7",
+    "pixi.js": "^4.7.1",
+    "webpack": "^4.28.4"
+  },
+  "dependencies": {
+    "react": "^16.8.4"
   }
 }
